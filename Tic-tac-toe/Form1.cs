@@ -18,6 +18,14 @@ namespace Tic_tac_toe
         private bool winner;
         private SoundPlayer player;
         private int status = 0;
+        private PictureBox[] img_locations;
+        public PictureBox[] ImageLocProp
+        {
+            get { return new PictureBox[] {A1,A2,A3,
+                B1,B2,B3,
+                C1,C2,C3};}
+        }
+
         public Form1()
         {
             InitializeComponent();
@@ -60,24 +68,25 @@ namespace Tic_tac_toe
             if (winner)
             {
                 MessageBox.Show(state == 0 ? $"{player1Name.Text}: ПОЗДРАВЛЯЮ! Ты Победил" : $"{player2Name.Text}: ПОЗДРАВЛЯЮ! Ты Победил");
-
                 Clear_Items();
                 winner = false;
             }
+            
         }
         private void Clear_Items()
         {
-            PictureBox[] img_locations =
-{
-                A1,A2,A3,
-                B1,B2,B3,
-                C1,C2,C3
-                };
-
-            for (int i = 0; i < img_locations.Length; i++)
+            for (int i = 0; i < ImageLocProp.Length; i++)
             {
-                img_locations[i].ImageLocation = null;
+                ImageLocProp[i].ImageLocation = null;
             }
+        }
+
+        private bool CheckForDraw()
+        {
+
+
+
+            return false;
         }
         private bool Check_For_Winner()
         {
