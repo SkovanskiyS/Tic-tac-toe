@@ -59,7 +59,7 @@ namespace Tic_tac_toe
 
             if (winner)
             {
-                MessageBox.Show(state == 0 ? "X: ПОЗДРАВЛЯЮ! Ты Победил" : "Y: ПОЗДРАВЛЯЮ! Ты Победил");
+                MessageBox.Show(state == 0 ? $"{player1Name.Text}: ПОЗДРАВЛЯЮ! Ты Победил" : $"{player2Name.Text}: ПОЗДРАВЛЯЮ! Ты Победил");
 
                 Clear_Items();
                 winner = false;
