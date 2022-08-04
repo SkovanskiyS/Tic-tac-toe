@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Media;
+using System.Threading;
 
 namespace Tic_tac_toe
 {
@@ -17,8 +18,7 @@ namespace Tic_tac_toe
         private int state = 1;
         private bool winner;
         private SoundPlayer player;
-        private int status = 0;
-        private PictureBox[] img_locations;
+        private int status = 1;
         public PictureBox[] ImageLocProp
         {
             get { return new PictureBox[] {A1,A2,A3,
@@ -70,6 +70,10 @@ namespace Tic_tac_toe
                 MessageBox.Show(state == 0 ? $"{player1Name.Text}: ПОЗДРАВЛЯЮ! Ты Победил" : $"{player2Name.Text}: ПОЗДРАВЛЯЮ! Ты Победил");
                 Clear_Items();
                 winner = false;
+            }else if (CheckForDraw())
+            {
+                MessageBox.Show("Ничья!");
+                Clear_Items();
             }
             
         }
@@ -83,10 +87,21 @@ namespace Tic_tac_toe
 
         private bool CheckForDraw()
         {
+            bool isDraw = false;
+            int nullNum = 0;
+            foreach (var item in ImageLocProp)
+            {
+                if (item.ImageLocation!=null)
+                {
+                    nullNum++;
+                }
+            }
+            if (nullNum==9)
+            {
+                isDraw = true;
+            }
 
-
-
-            return false;
+            return isDraw;
         }
         private bool Check_For_Winner()
         {
