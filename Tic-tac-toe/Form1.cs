@@ -38,9 +38,7 @@ namespace Tic_tac_toe
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            B1.BackColor = Color.Black;
-
-
+           
         }
 
         private void picture_box(object sender, EventArgs e)
@@ -97,73 +95,96 @@ namespace Tic_tac_toe
         }
         private bool Check_For_Winner()
         {
-
-            //string[] img_locations =
-            //{
-            //    A1.ImageLocation,A2.ImageLocation,A3.ImageLocation,
-            //    B1.ImageLocation,B2.ImageLocation,B3.ImageLocation,
-            //    C1.ImageLocation,C2.ImageLocation,C3.ImageLocation
-            //};
-
-            if (!(A3.ImageLocation == null))
+            //horizontal 
+            if (A3.ImageLocation != null)
             {
                 if (A1.ImageLocation == A2.ImageLocation && A2.ImageLocation == A3.ImageLocation) return true;
-                if (!(C1.ImageLocation==null)&&!(B2.ImageLocation==null))
-                {
-                    if (A1.ImageLocation == B1.ImageLocation && B1.ImageLocation == C1.ImageLocation) return true;
-                    else if (A3.ImageLocation == B2.ImageLocation && B2.ImageLocation == C1.ImageLocation||A1.ImageLocation == B2.ImageLocation && B2.ImageLocation == C3.ImageLocation ) return true;
-                }
             }
-            if (!(B3.ImageLocation == null))
+            if (B3.ImageLocation!=null)
             {
                 if (B1.ImageLocation == B2.ImageLocation && B2.ImageLocation == B3.ImageLocation) return true;
-                if (!(C2.ImageLocation==null)&&A3.ImageLocation!=null)
-                {
-                    if (A2.ImageLocation == B2.ImageLocation && B2.ImageLocation == C2.ImageLocation) return true;
-                    else if (A3.ImageLocation == B2.ImageLocation && B2.ImageLocation == C3.ImageLocation || A1.ImageLocation == B2.ImageLocation && B2.ImageLocation == C3.ImageLocation) return true;
-                }
             }
-            if (!(C3.ImageLocation == null))
+            if (C3.ImageLocation!=null)
             {
                 if (C1.ImageLocation == C2.ImageLocation && C2.ImageLocation == C3.ImageLocation) return true;
-                if (!(A3.ImageLocation==null)||!(B2.ImageLocation==null))
-                {
-                    if (A3.ImageLocation == B3.ImageLocation && B3.ImageLocation == C3.ImageLocation) return true;
-                    else if (C1.ImageLocation == B2.ImageLocation && B2.ImageLocation == A3.ImageLocation || A1.ImageLocation == B2.ImageLocation && B2.ImageLocation == C3.ImageLocation) return true;
-
-                }
             }
-            //if (!(A1.ImageLocation == null))
-            //{
-            //    if (A1.ImageLocation == B1.ImageLocation && B1.ImageLocation == C1.ImageLocation) return true;
-            //}
-            //if (!(B2.ImageLocation == null))
-            //{
-            //    if (A2.ImageLocation == B2.ImageLocation && B2.ImageLocation == C2.ImageLocation) return true;
-            //}
-            //if (!(C3.ImageLocation == null))
-            //{
-            //    if (A3.ImageLocation == B3.ImageLocation && B3.ImageLocation == C3.ImageLocation) return true;
-            //}
-
-
-
-
+            //vertical 
+            if (A1.ImageLocation!=null&&C1.ImageLocation!=null)
+            {
+                if (A1.ImageLocation == B1.ImageLocation && B1.ImageLocation == C1.ImageLocation) return true;
+            }
+            if (A2.ImageLocation!=null&&C2.ImageLocation!=null)
+            {
+                if (A2.ImageLocation == B2.ImageLocation && B2.ImageLocation == C2.ImageLocation) return true;
+            }
+            if (A3.ImageLocation!=null&&C3.ImageLocation!=null)
+            {
+                if (A3.ImageLocation == B3.ImageLocation && B3.ImageLocation == C3.ImageLocation) return true;
+            }
+            //diagonal
+            if (A1.ImageLocation!=null&&C3.ImageLocation!=null)
+            {
+                if(A1.ImageLocation == B2.ImageLocation && B2.ImageLocation == C3.ImageLocation) return true;   
+            }
+            if (A3.ImageLocation!=null&&C1.ImageLocation!=null)
+            {
+                if (A3.ImageLocation == B2.ImageLocation && B2.ImageLocation == C1.ImageLocation) return true;
+            }
             return false;
         }
 
         private void bunifuButton2_Click(object sender, EventArgs e)
         {
-            
-            if (player1Name.Text.Length>0&&player2Name.Text.Length>0&&players.SelectedItem.ToString().Length>0)
+            try
             {
-                status = 1;
-            }
-            else
-            {
-                MessageBox.Show("Введите данные, чтобы начать игру", "Предупреждение!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if (bunifuButton2.Text== "Начать")
+                {
+                    if (player1Name.Text.Length > 0 && player2Name.Text.Length > 0 && players.SelectedItem.ToString().Length > 0)
+                    {
+                        Clear_Items();
+                        player1Name.Enabled = false;
+                        player2Name.Enabled = false;
+                        players.Enabled = false;
+                        bunifuButton2.Text = "Завершить";
+                        Console.Beep();
+                        status = 1;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Введите данные, чтобы начать игру", "Предупреждение!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
+                    }
+                }
+                else
+                {
+                    player1Name.Enabled = true;
+                    player2Name.Enabled = true;
+                    players.Enabled = true;
+                    bunifuButton2.Text = "Начать";
+                }
+
+                
             }
+            catch (Exception)
+            {   }
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Clear_Items();
+        }
+
+        private void players_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (players.SelectedItem.ToString()== "Игрко №1: X") state = 1;
+            else state = 0;
+
+        }
+
+        private void bunifuLabel1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
