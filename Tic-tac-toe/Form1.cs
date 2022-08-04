@@ -89,17 +89,9 @@ namespace Tic_tac_toe
         {
             bool isDraw = false;
             int nullNum = 0;
-            foreach (var item in ImageLocProp)
-            {
-                if (item.ImageLocation!=null)
-                {
-                    nullNum++;
-                }
-            }
-            if (nullNum==9)
-            {
-                isDraw = true;
-            }
+            foreach (var item in ImageLocProp) if (item.ImageLocation!=null)nullNum++;
+
+            if (nullNum==9) isDraw = true;
 
             return isDraw;
         }
@@ -125,7 +117,7 @@ namespace Tic_tac_toe
             if (!(B3.ImageLocation == null))
             {
                 if (B1.ImageLocation == B2.ImageLocation && B2.ImageLocation == B3.ImageLocation) return true;
-                if (!(C2.ImageLocation==null))
+                if (!(C2.ImageLocation==null)&&A3.ImageLocation!=null)
                 {
                     if (A2.ImageLocation == B2.ImageLocation && B2.ImageLocation == C2.ImageLocation) return true;
                     else if (A3.ImageLocation == B2.ImageLocation && B2.ImageLocation == C3.ImageLocation || A1.ImageLocation == B2.ImageLocation && B2.ImageLocation == C3.ImageLocation) return true;
