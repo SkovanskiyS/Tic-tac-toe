@@ -508,8 +508,7 @@
             this.players.TabIndex = 20;
             this.players.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Right;
             this.players.TextLeftMargin = 5;
-            this.players.SelectedIndexChanged += new System.EventHandler(this.players_SelectedIndexChanged);
-            // 
+          // 
             // label4
             // 
             this.label4.AutoSize = true;

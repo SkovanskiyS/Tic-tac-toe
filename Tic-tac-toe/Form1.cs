@@ -18,29 +18,21 @@ namespace Tic_tac_toe
         private int state = 0;
         private bool winner;
         private SoundPlayer player;
-        private int status = 1;
+        private int status = 0;
         public PictureBox[] ImageLocProp
         {
             get { return new PictureBox[] {A1,A2,A3,
                 B1,B2,B3,
                 C1,C2,C3};}
         }
-
         public Form1()
         {
             InitializeComponent();
         }
-
         private void Form1_Load(object sender, EventArgs e)
         {
             player = new SoundPlayer();
         }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-           
-        }
-
         private void picture_box(object sender, EventArgs e)
         {
             PictureBox pictureBox = (PictureBox)sender;
@@ -182,33 +174,17 @@ namespace Tic_tac_toe
                     Clear_Items();
                     UnbLockInput();
                 }
-
-
             }
             catch (Exception)
             {
                 player.SoundLocation = "../zvuk41.wav";
                 player.Play();
                 MessageBox.Show("Введите данные и нажмите на кнопку \"Начать\"", "Предупреждение!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
             }
-
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             Clear_Items();
-        }
-
-        private void players_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-
-        }
-
-        private void bunifuLabel1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
