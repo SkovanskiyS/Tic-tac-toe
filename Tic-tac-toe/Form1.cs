@@ -15,7 +15,7 @@ namespace Tic_tac_toe
     public partial class Form1 : Form
     {
 
-        private int state = 1;
+        private int state = 0;
         private bool winner;
         private SoundPlayer player;
         private int status = 1;
@@ -46,7 +46,7 @@ namespace Tic_tac_toe
             PictureBox pictureBox = (PictureBox)sender;
             if (status==0)
             {
-                MessageBox.Show("Введите данные, чтобы начать игру", "Предупреждение!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Введите данные и нажмите на кнопку \"Начать\"", "Предупреждение!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             else
@@ -68,10 +68,17 @@ namespace Tic_tac_toe
                 MessageBox.Show(state == 0 ? $"{player1Name.Text}: ПОЗДРАВЛЯЮ! Ты Победил" : $"{player2Name.Text}: ПОЗДРАВЛЯЮ! Ты Победил");
                 Clear_Items();
                 winner = false;
-            }else if (CheckForDraw())
+                UnbLockInput();
+                status = 0;
+                state = default;
+            }
+            else if (CheckForDraw())
             {
                 MessageBox.Show("Ничья!");
                 Clear_Items();
+                UnbLockInput();
+                status = 0;
+                state = default;
             }
             
         }
@@ -133,6 +140,20 @@ namespace Tic_tac_toe
             return false;
         }
 
+        private void BLockInput()
+        {
+            player1Name.Enabled = false;
+            player2Name.Enabled = false;
+            players.Enabled = false;
+            bunifuButton2.Text = "Завершить";
+        }
+        private void UnbLockInput()
+        {
+            player1Name.Enabled = true;
+            player2Name.Enabled = true;
+            players.Enabled = true;
+            bunifuButton2.Text = "Начать";
+        }
         private void bunifuButton2_Click(object sender, EventArgs e)
         {
             try
@@ -142,31 +163,35 @@ namespace Tic_tac_toe
                     if (player1Name.Text.Length > 0 && player2Name.Text.Length > 0 && players.SelectedItem.ToString().Length > 0)
                     {
                         Clear_Items();
-                        player1Name.Enabled = false;
-                        player2Name.Enabled = false;
-                        players.Enabled = false;
-                        bunifuButton2.Text = "Завершить";
-                        Console.Beep();
+                        player.SoundLocation = "../zvuk41.wav";
+                        player.Play();
+                        BLockInput();
                         status = 1;
+                        if (players.SelectedItem.ToString() == "Игрко №1: X") state = 1;
+                        else state = 0;
                     }
                     else
                     {
-                        MessageBox.Show("Введите данные, чтобы начать игру", "Предупреждение!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
+                        player.SoundLocation = "../zvuk41.wav";
+                        player.Play();
+                        MessageBox.Show("Введите данные и нажмите на кнопку \"Начать\"", "Предупреждение!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
                 else
                 {
-                    player1Name.Enabled = true;
-                    player2Name.Enabled = true;
-                    players.Enabled = true;
-                    bunifuButton2.Text = "Начать";
+                    Clear_Items();
+                    UnbLockInput();
                 }
 
-                
+
             }
             catch (Exception)
-            {   }
+            {
+                player.SoundLocation = "../zvuk41.wav";
+                player.Play();
+                MessageBox.Show("Введите данные и нажмите на кнопку \"Начать\"", "Предупреждение!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
 
         }
 
@@ -177,8 +202,7 @@ namespace Tic_tac_toe
 
         private void players_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (players.SelectedItem.ToString()== "Игрко №1: X") state = 1;
-            else state = 0;
+
 
         }
 
