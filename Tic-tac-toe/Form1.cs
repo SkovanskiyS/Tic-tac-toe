@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Media;
 using System.Threading;
+using System.Diagnostics;
 
 namespace Tic_tac_toe
 {
@@ -16,7 +17,6 @@ namespace Tic_tac_toe
     {
 
         private int state = 0;
-        private bool winner;
         private SoundPlayer player;
         private int status = 0;
         public PictureBox[] ImageLocProp
@@ -61,9 +61,7 @@ namespace Tic_tac_toe
             }
 
             state = state == 0 ? 1 : 0;
-            winner = Check_For_Winner();
-
-            if (winner)
+            if (Check_For_Winner())
             {
                 MessageBox.Show(state == 0 ? $"{player1Name.Text}: ПОЗДРАВЛЯЮ! Ты Победил" : $"{player2Name.Text}: ПОЗДРАВЛЯЮ! Ты Победил");
                 Clear_Items();
@@ -74,7 +72,7 @@ namespace Tic_tac_toe
             }
             else if (CheckForDraw())
             {
-                MessageBox.Show("Ничья!");
+                MessageBox.Show("Ничья!","Конец",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 Clear_Items();
                 UnbLockInput();
                 status = 0;
@@ -87,6 +85,7 @@ namespace Tic_tac_toe
             for (int i = 0; i < ImageLocProp.Length; i++)
             {
                 ImageLocProp[i].Image = null;
+                ImageLocProp[i].Tag = default;
             }
         }
 
@@ -146,6 +145,7 @@ namespace Tic_tac_toe
             player2Name.Enabled = false;
             players.Enabled = false;
             bunifuButton2.Text = "Завершить";
+            status = 0;
         }
         private void UnbLockInput()
         {
@@ -153,6 +153,7 @@ namespace Tic_tac_toe
             player2Name.Enabled = true;
             players.Enabled = true;
             bunifuButton2.Text = "Начать";
+            status = 0;
         }
         private void bunifuButton2_Click(object sender, EventArgs e)
         {
@@ -168,7 +169,7 @@ namespace Tic_tac_toe
                         player.Play();
                         BLockInput();
                         status = 1;
-                        if (players.SelectedItem.ToString() == "Игрко №1: X") state = 1;
+                        if (players.SelectedItem.ToString() == "Игрок №1: X") state = 1;
                         else state = 0;
                     }
                     else
@@ -192,6 +193,11 @@ namespace Tic_tac_toe
         private void button1_Click(object sender, EventArgs e)
         {
             Clear_Items();
+        }
+
+        private void bunifuButton1_Click(object sender, EventArgs e)
+        {
+            Process.Start("https://t.me/o101xd");
         }
     }
 }
