@@ -18,7 +18,7 @@ namespace Tic_tac_toe
         private int state = 0;
         private bool winner;
         private SoundPlayer player;
-        private int status = 1;
+        private int status = 0;
         public PictureBox[] ImageLocProp
         {
             get { return new PictureBox[] {A1,A2,A3,
