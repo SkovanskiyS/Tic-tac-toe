@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges6 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties41 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties42 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties43 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties44 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties45 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties46 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties47 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties48 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties9 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties10 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties11 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties12 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties13 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties14 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties15 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties16 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -113,7 +113,7 @@
             // 
             this.B1.BackColor = System.Drawing.Color.Black;
             this.B1.Location = new System.Drawing.Point(108, 201);
-            this.B1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.B1.Margin = new System.Windows.Forms.Padding(4);
             this.B1.Name = "B1";
             this.B1.Size = new System.Drawing.Size(156, 151);
             this.B1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -125,7 +125,7 @@
             // 
             this.B2.BackColor = System.Drawing.Color.Black;
             this.B2.Location = new System.Drawing.Point(285, 201);
-            this.B2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.B2.Margin = new System.Windows.Forms.Padding(4);
             this.B2.Name = "B2";
             this.B2.Size = new System.Drawing.Size(156, 151);
             this.B2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -136,8 +136,9 @@
             // A1
             // 
             this.A1.BackColor = System.Drawing.Color.Black;
+            this.A1.ImageLocation = "";
             this.A1.Location = new System.Drawing.Point(108, 36);
-            this.A1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.A1.Margin = new System.Windows.Forms.Padding(4);
             this.A1.Name = "A1";
             this.A1.Size = new System.Drawing.Size(156, 151);
             this.A1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -149,7 +150,7 @@
             // 
             this.C1.BackColor = System.Drawing.Color.Black;
             this.C1.Location = new System.Drawing.Point(108, 370);
-            this.C1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.C1.Margin = new System.Windows.Forms.Padding(4);
             this.C1.Name = "C1";
             this.C1.Size = new System.Drawing.Size(156, 151);
             this.C1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -161,7 +162,7 @@
             // 
             this.C2.BackColor = System.Drawing.Color.Black;
             this.C2.Location = new System.Drawing.Point(279, 370);
-            this.C2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.C2.Margin = new System.Windows.Forms.Padding(4);
             this.C2.Name = "C2";
             this.C2.Size = new System.Drawing.Size(156, 151);
             this.C2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -173,7 +174,7 @@
             // 
             this.C3.BackColor = System.Drawing.Color.Black;
             this.C3.Location = new System.Drawing.Point(457, 370);
-            this.C3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.C3.Margin = new System.Windows.Forms.Padding(4);
             this.C3.Name = "C3";
             this.C3.Size = new System.Drawing.Size(156, 151);
             this.C3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -185,7 +186,7 @@
             // 
             this.B3.BackColor = System.Drawing.Color.Black;
             this.B3.Location = new System.Drawing.Point(456, 201);
-            this.B3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.B3.Margin = new System.Windows.Forms.Padding(4);
             this.B3.Name = "B3";
             this.B3.Size = new System.Drawing.Size(156, 151);
             this.B3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -197,7 +198,7 @@
             // 
             this.A2.BackColor = System.Drawing.Color.Black;
             this.A2.Location = new System.Drawing.Point(287, 36);
-            this.A2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.A2.Margin = new System.Windows.Forms.Padding(4);
             this.A2.Name = "A2";
             this.A2.Size = new System.Drawing.Size(156, 151);
             this.A2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -209,7 +210,7 @@
             // 
             this.A3.BackColor = System.Drawing.Color.Black;
             this.A3.Location = new System.Drawing.Point(456, 36);
-            this.A3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.A3.Margin = new System.Windows.Forms.Padding(4);
             this.A3.Name = "A3";
             this.A3.Size = new System.Drawing.Size(156, 151);
             this.A3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -236,11 +237,11 @@
             this.bunifuButton2.ColorContrastOnClick = 45;
             this.bunifuButton2.ColorContrastOnHover = 45;
             this.bunifuButton2.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges6.BottomLeft = true;
-            borderEdges6.BottomRight = true;
-            borderEdges6.TopLeft = true;
-            borderEdges6.TopRight = true;
-            this.bunifuButton2.CustomizableEdges = borderEdges6;
+            borderEdges2.BottomLeft = true;
+            borderEdges2.BottomRight = true;
+            borderEdges2.TopLeft = true;
+            borderEdges2.TopRight = true;
+            this.bunifuButton2.CustomizableEdges = borderEdges2;
             this.bunifuButton2.DialogResult = System.Windows.Forms.DialogResult.None;
             this.bunifuButton2.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.bunifuButton2.DisabledFillColor = System.Drawing.Color.Empty;
@@ -345,26 +346,26 @@
             this.player1Name.Modified = false;
             this.player1Name.Multiline = false;
             this.player1Name.Name = "player1Name";
-            stateProperties41.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties41.FillColor = System.Drawing.Color.Empty;
-            stateProperties41.ForeColor = System.Drawing.Color.Empty;
-            stateProperties41.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.player1Name.OnActiveState = stateProperties41;
-            stateProperties42.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties42.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties42.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties42.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.player1Name.OnDisabledState = stateProperties42;
-            stateProperties43.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties43.FillColor = System.Drawing.Color.Empty;
-            stateProperties43.ForeColor = System.Drawing.Color.Empty;
-            stateProperties43.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.player1Name.OnHoverState = stateProperties43;
-            stateProperties44.BorderColor = System.Drawing.Color.Silver;
-            stateProperties44.FillColor = System.Drawing.Color.White;
-            stateProperties44.ForeColor = System.Drawing.Color.Empty;
-            stateProperties44.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.player1Name.OnIdleState = stateProperties44;
+            stateProperties9.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties9.FillColor = System.Drawing.Color.Empty;
+            stateProperties9.ForeColor = System.Drawing.Color.Empty;
+            stateProperties9.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.player1Name.OnActiveState = stateProperties9;
+            stateProperties10.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties10.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties10.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.player1Name.OnDisabledState = stateProperties10;
+            stateProperties11.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties11.FillColor = System.Drawing.Color.Empty;
+            stateProperties11.ForeColor = System.Drawing.Color.Empty;
+            stateProperties11.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.player1Name.OnHoverState = stateProperties11;
+            stateProperties12.BorderColor = System.Drawing.Color.Silver;
+            stateProperties12.FillColor = System.Drawing.Color.White;
+            stateProperties12.ForeColor = System.Drawing.Color.Empty;
+            stateProperties12.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.player1Name.OnIdleState = stateProperties12;
             this.player1Name.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.player1Name.PasswordChar = '\0';
             this.player1Name.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -421,26 +422,26 @@
             this.player2Name.Modified = false;
             this.player2Name.Multiline = false;
             this.player2Name.Name = "player2Name";
-            stateProperties45.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties45.FillColor = System.Drawing.Color.Empty;
-            stateProperties45.ForeColor = System.Drawing.Color.Empty;
-            stateProperties45.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.player2Name.OnActiveState = stateProperties45;
-            stateProperties46.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties46.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties46.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties46.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.player2Name.OnDisabledState = stateProperties46;
-            stateProperties47.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties47.FillColor = System.Drawing.Color.Empty;
-            stateProperties47.ForeColor = System.Drawing.Color.Empty;
-            stateProperties47.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.player2Name.OnHoverState = stateProperties47;
-            stateProperties48.BorderColor = System.Drawing.Color.Silver;
-            stateProperties48.FillColor = System.Drawing.Color.White;
-            stateProperties48.ForeColor = System.Drawing.Color.Empty;
-            stateProperties48.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.player2Name.OnIdleState = stateProperties48;
+            stateProperties13.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties13.FillColor = System.Drawing.Color.Empty;
+            stateProperties13.ForeColor = System.Drawing.Color.Empty;
+            stateProperties13.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.player2Name.OnActiveState = stateProperties13;
+            stateProperties14.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties14.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties14.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.player2Name.OnDisabledState = stateProperties14;
+            stateProperties15.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties15.FillColor = System.Drawing.Color.Empty;
+            stateProperties15.ForeColor = System.Drawing.Color.Empty;
+            stateProperties15.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.player2Name.OnHoverState = stateProperties15;
+            stateProperties16.BorderColor = System.Drawing.Color.Silver;
+            stateProperties16.FillColor = System.Drawing.Color.White;
+            stateProperties16.ForeColor = System.Drawing.Color.Empty;
+            stateProperties16.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.player2Name.OnIdleState = stateProperties16;
             this.player2Name.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.player2Name.PasswordChar = '\0';
             this.player2Name.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -506,9 +507,10 @@
             this.players.Name = "players";
             this.players.Size = new System.Drawing.Size(151, 32);
             this.players.TabIndex = 20;
+            this.players.Text = null;
             this.players.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Right;
             this.players.TextLeftMargin = 5;
-          // 
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -569,7 +571,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximumSize = new System.Drawing.Size(737, 811);
             this.Name = "Form1";
             this.Text = "Form1";

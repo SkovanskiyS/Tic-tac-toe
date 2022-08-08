@@ -18,7 +18,7 @@ namespace Tic_tac_toe
         private int state = 0;
         private bool winner;
         private SoundPlayer player;
-        private int status = 0;
+        private int status = 1;
         public PictureBox[] ImageLocProp
         {
             get { return new PictureBox[] {A1,A2,A3,
@@ -43,12 +43,20 @@ namespace Tic_tac_toe
             }
             else
             {
-                if (pictureBox.ImageLocation == null)
+                if (pictureBox.Image == null)
                 {
-                    player.SoundLocation = @"../jg-032316-sfx-elevator-button.wav";
-                    player.Play();
-                    if (state == 0) pictureBox.ImageLocation = @"../img/circle.png";
-                    else pictureBox.ImageLocation = @"../img/x.png";
+                    player = new SoundPlayer(Properties.Resources.jg_032316_sfx_elevator_button);
+                    player.Play();                  
+                    if (state == 0)
+                    {
+                        pictureBox.Image = Properties.Resources.circle;
+                        pictureBox.Tag = nameof(Properties.Resources.circle);
+                    }
+                    else
+                    {
+                        pictureBox.Image = Properties.Resources.x;
+                        pictureBox.Tag = nameof(Properties.Resources.x);
+                    }
                 }
             }
 
@@ -78,7 +86,7 @@ namespace Tic_tac_toe
         {
             for (int i = 0; i < ImageLocProp.Length; i++)
             {
-                ImageLocProp[i].ImageLocation = null;
+                ImageLocProp[i].Image = null;
             }
         }
 
@@ -86,7 +94,7 @@ namespace Tic_tac_toe
         {
             bool isDraw = false;
             int nullNum = 0;
-            foreach (var item in ImageLocProp) if (item.ImageLocation!=null)nullNum++;
+            foreach (var item in ImageLocProp) if (item.Image!=null)nullNum++;
 
             if (nullNum==9) isDraw = true;
 
@@ -95,39 +103,39 @@ namespace Tic_tac_toe
         private bool Check_For_Winner()
         {
             //horizontal 
-            if (A3.ImageLocation != null)
+            if (A3.Image != null)
             {
-                if (A1.ImageLocation == A2.ImageLocation && A2.ImageLocation == A3.ImageLocation) return true;
+                if (A1.Tag == A2.Tag && A2.Tag == A3.Tag) return true;
             }
-            if (B3.ImageLocation!=null)
+            if (B3.Image!=null)
             {
-                if (B1.ImageLocation == B2.ImageLocation && B2.ImageLocation == B3.ImageLocation) return true;
+                if (B1.Tag == B2.Tag && B2.Tag == B3.Tag) return true;
             }
-            if (C3.ImageLocation!=null)
+            if (C3.Image!=null)
             {
-                if (C1.ImageLocation == C2.ImageLocation && C2.ImageLocation == C3.ImageLocation) return true;
+                if (C1.Tag == C2.Tag && C2.Tag == C3.Tag) return true;
             }
             //vertical 
-            if (A1.ImageLocation!=null&&C1.ImageLocation!=null)
+            if (A1.Image!=null&&C1.Image!=null)
             {
-                if (A1.ImageLocation == B1.ImageLocation && B1.ImageLocation == C1.ImageLocation) return true;
+                if (A1.Tag == B1.Tag && B1.Tag == C1.Tag) return true;
             }
-            if (A2.ImageLocation!=null&&C2.ImageLocation!=null)
+            if (A2.Image!=null&&C2.Image!=null)
             {
-                if (A2.ImageLocation == B2.ImageLocation && B2.ImageLocation == C2.ImageLocation) return true;
+                if (A2.Tag == B2.Tag && B2.Tag == C2.Tag) return true;
             }
-            if (A3.ImageLocation!=null&&C3.ImageLocation!=null)
+            if (A3.Image!=null&&C3.Image!=null)
             {
-                if (A3.ImageLocation == B3.ImageLocation && B3.ImageLocation == C3.ImageLocation) return true;
+                if (A3.Tag == B3.Tag && B3.Tag == C3.Tag) return true;
             }
             //diagonal
-            if (A1.ImageLocation!=null&&C3.ImageLocation!=null)
+            if (A1.Image!=null&&C3.Image!=null)
             {
-                if(A1.ImageLocation == B2.ImageLocation && B2.ImageLocation == C3.ImageLocation) return true;   
+                if(A1.Tag == B2.Tag && B2.Tag == C3.Tag) return true;   
             }
-            if (A3.ImageLocation!=null&&C1.ImageLocation!=null)
+            if (A3.Image!=null&&C1.Image!=null)
             {
-                if (A3.ImageLocation == B2.ImageLocation && B2.ImageLocation == C1.ImageLocation) return true;
+                if (A3.Tag == B2.Tag && B2.Tag == C1.Tag) return true;
             }
             return false;
         }
@@ -148,14 +156,15 @@ namespace Tic_tac_toe
         }
         private void bunifuButton2_Click(object sender, EventArgs e)
         {
+            player = new SoundPlayer(Properties.Resources.zvuk41);
             try
             {
                 if (bunifuButton2.Text== "Начать")
                 {
+
                     if (player1Name.Text.Length > 0 && player2Name.Text.Length > 0 && players.SelectedItem.ToString().Length > 0)
                     {
                         Clear_Items();
-                        player.SoundLocation = "../zvuk41.wav";
                         player.Play();
                         BLockInput();
                         status = 1;
@@ -164,7 +173,6 @@ namespace Tic_tac_toe
                     }
                     else
                     {
-                        player.SoundLocation = "../zvuk41.wav";
                         player.Play();
                         MessageBox.Show("Введите данные и нажмите на кнопку \"Начать\"", "Предупреждение!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
@@ -177,7 +185,6 @@ namespace Tic_tac_toe
             }
             catch (Exception)
             {
-                player.SoundLocation = "../zvuk41.wav";
                 player.Play();
                 MessageBox.Show("Введите данные и нажмите на кнопку \"Начать\"", "Предупреждение!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }

@@ -35,6 +35,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>tic-tac-toe_39453 %281%29.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bunifu.Licensing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=f89b4760ba7dcb6b, processorArchitecture=MSIL">
       <HintPath>..\packages\Bunifu.Licensing.5.0.0\lib\net40\Bunifu.Licensing.dll</HintPath>
@@ -261,6 +264,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="img\1608630_circle_o_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\img\circle.png" />
+    <None Include="bin\img\x.png" />
+    <None Include="bin\jg-032316-sfx-elevator-button.wav" />
+    <None Include="bin\zvuk41.wav" />
+    <Content Include="tic-tac-toe_39453 %281%29.ico" />
+    <Content Include="tic-tac-toe_39453.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Fody.4.0.2\build\Fody.targets" Condition="Exists('..\packages\Fody.4.0.2\build\Fody.targets')" />
