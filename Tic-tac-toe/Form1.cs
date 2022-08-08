@@ -65,7 +65,6 @@ namespace Tic_tac_toe
             {
                 MessageBox.Show(state == 0 ? $"{player1Name.Text}: ПОЗДРАВЛЯЮ! Ты Победил" : $"{player2Name.Text}: ПОЗДРАВЛЯЮ! Ты Победил");
                 Clear_Items();
-                winner = false;
                 UnbLockInput();
                 status = 0;
                 state = default;
